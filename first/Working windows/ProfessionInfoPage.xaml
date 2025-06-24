@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="first.ProfessionInfoPage"
+             Title="Выбери свою профессию!">
+
+    <Grid>
+
+        <Image Source="{Binding Image}"
+               Aspect="AspectFill"
+               Opacity="0.25" 
+               HorizontalOptions="FillAndExpand" 
+               VerticalOptions="FillAndExpand" 
+        />
+
+        <ScrollView>
+            <VerticalStackLayout>
+                <Label Text="{Binding Profession}" 
+                       FontSize="Header" 
+                       FontAttributes="Bold" 
+                       HorizontalOptions="Center" 
+                       VerticalOptions="Center" 
+                       TextColor="White" />
+                <Label Text="{Binding Information}"
+                       FontSize="22" 
+                       Padding="100"
+                       VerticalOptions="Center" 
+                       HorizontalOptions="Center" 
+                       TextColor="White" />
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

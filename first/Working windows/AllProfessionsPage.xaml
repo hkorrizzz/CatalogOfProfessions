@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="first.AllProfessionsPage"
+             Title="Общий справочник профессий">
+    <ScrollView>
+        <StackLayout Padding="50">
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="70*" />
+                    <ColumnDefinition Width="30*" />
+                </Grid.ColumnDefinitions>
+                <SearchBar 
+                BackgroundColor="White"
+                x:Name="searchBar"
+                Placeholder="Поиск по профессиям..."
+                TextChanged="SearchTextChanged"
+                FontSize="20"
+                MaxLength="20"
+                TextColor="Black"
+                HeightRequest="50"
+                Margin="70,0,0,0"
+                Grid.Column="0"/>
+                <Button
+                x:Name="sortButton"
+                BorderWidth="2"
+                BorderColor="White"
+                Text="Отсортировать от А до Я"
+                FontSize="20"
+                BackgroundColor="White"
+                TextColor="Black"
+                HorizontalOptions="End" 
+                VerticalOptions="Center"
+                Clicked="SortedProfessions"
+                    Margin="0,0,120,0"
+                Grid.Column="1" />
+            </Grid>
+            <Label x:Name="noResultsLabel" 
+                Padding="50"
+                FontSize="23"
+                TextColor="Gray"
+                Text="По вашему запросу ничего не найдено!" 
+                IsVisible="False" 
+                HorizontalOptions="Center" 
+                VerticalOptions="Center" />
+            
+            <Grid 
+            x:Name="ProfessionGrid" 
+            Padding="50"
+            RowSpacing="60" 
+            ColumnSpacing="60">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+
+                </Grid.ColumnDefinitions>
+            </Grid>
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

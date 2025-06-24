@@ -1,0 +1,118 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="first.MainPage"
+             Title="Каталог">
+
+
+        <ScrollView>
+            <StackLayout Padding="50">
+                <Label Text="Профессии" 
+                       FontSize="Header" 
+                       FontAttributes="Bold" 
+                       HorizontalOptions="Center" 
+                       VerticalOptions="Center" 
+                       TextColor="White" />
+                <Label 
+                    HorizontalOptions="Center" 
+                    VerticalOptions="Center"
+                    Text="Выбор профессии — это ключевой этап в жизни каждого человека, и к нему стоит подходить с особой серьезностью. Для одних важным фактором становится личная увлеченность и страсть к определенной сфере, другие же ориентируются на уровень дохода и социальный статус, который приносит профессия. Не менее значимым критерием является и востребованность специальности на рынке труда, поскольку стабильность и перспектива карьерного роста играют важную роль в принятии решения. Каждый путь уникален, и важно найти гармонию между своими желаниями и реальными возможностями."
+                    FontSize="19" 
+                    Padding="50"
+                    HorizontalTextAlignment="Center" />
+                
+                <Button
+                    x:Name="allProfessionsButton"
+                    BorderWidth="5"
+                    BorderColor="Black"
+                    Text="Искать в общем справочнике профессий"
+                    FontSize="20"
+                    BackgroundColor="White"
+                    TextColor="Black"
+                    Margin="70,0,60,0"
+                    Clicked= "AllProfessionsSearch"
+                />
+                
+            <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="70*" />
+                        <ColumnDefinition Width="30*" />
+                    </Grid.ColumnDefinitions>
+                    <SearchBar 
+                        BackgroundColor="White"
+                        x:Name="searchBar"
+                        Placeholder="Поиск по направлению..."
+                        TextChanged="SearchTextChanged"
+                        FontSize="20"
+                        MaxLength="20"
+                        TextColor="Black"
+                        HeightRequest="50"
+                        Margin="75,0,0,0"
+                        Grid.Column="0"/>
+                    <Button
+                        x:Name="sortButton"
+                        BorderWidth="1"
+                        BorderColor="White"
+                        Text="Отсортировать от А до Я"
+                        FontSize="20"
+                        BackgroundColor="White"
+                        TextColor="Black"
+                        HorizontalOptions="End" 
+                        VerticalOptions="Center"
+                        Clicked="SortedProfessions"
+                        Margin="0,0,65,0"
+                        Grid.Column="1" />
+                </Grid>
+                
+            <Label x:Name="noResultsLabel" 
+                   Padding="50"
+                   FontSize="23"
+                   TextColor="Gray"
+               Text="По вашему запросу ничего не найдено!" 
+               IsVisible="False" 
+               HorizontalOptions="Center" 
+               VerticalOptions="Center" />
+
+                <Grid 
+                    x:Name="TypeGrid" 
+                    Padding="50"
+                    RowSpacing="20" 
+                    ColumnSpacing="20">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                </Grid>
+
+                <Label Text="Не указана профессия?" 
+                       FontSize="25" 
+                       FontAttributes="Bold" 
+                       HorizontalOptions="Center" 
+                       VerticalOptions="Center" 
+                       TextColor="White" />
+                <Button
+                    x:Name="addProfessionButton"
+                    Text="Добавить профессию"
+                    FontSize="20"
+                    BackgroundColor="White"
+                    TextColor="Black"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Clicked="AddProfessionButton"
+                    Margin="0,20,0,0" />
+                <Button
+                    x:Name="deleteProfessionButton"
+                    Text="Удалить профессию"
+                    FontSize="15"
+                    BackgroundColor="Black"
+                    TextColor="White"
+                    BorderColor="Maroon"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Clicked="DeleteProfessionButton"
+                    Margin="0,20,0,0" 
+                />
+        </StackLayout>
+        </ScrollView>
+
+</ContentPage>
